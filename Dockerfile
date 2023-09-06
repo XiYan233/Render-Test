@@ -31,7 +31,7 @@ ENV RCLONE_CONFIG=/config/rclone.conf \
 
 #ADD conf.ini /app
 
-#RUN chmod +x /app
+RUN chmod +x /cloudreve
 
 ENTRYPOINT ["/cloudreve/cloudreve"]
 
