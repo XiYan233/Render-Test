@@ -8,6 +8,7 @@ FROM p3terx/aria2-pro
 
 COPY --from=copyfile /cloudreve/cloudreve /cloudreve/cloudreve
 #RUN curl -fsSL git.io/aria2c.sh
+ADD conf.ini /cloudreve/conf.ini
 
 ENV RCLONE_CONFIG=/config/rclone.conf \
     UPDATE_TRACKERS=true \
