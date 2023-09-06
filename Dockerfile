@@ -33,6 +33,6 @@ ENV RCLONE_CONFIG=/config/rclone.conf \
 
 #RUN chmod +x /app
 
-#ENTRYPOINT ["/init","&&","/cloudreve"]
+ENTRYPOINT ["/cloudreve/cloudreve"]
 
-#EXPOSE 5212
+EXPOSE 5212
