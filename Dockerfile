@@ -1,6 +1,6 @@
 FROM cloudreve/cloudreve
 
-RUN apk add jq findutils
+RUN apk add jq findutils curl
 RUN curl -fsSL git.io/aria2c.sh | bash
 RUN rm -rf /var/cache/apk/* /tmp/*
 
