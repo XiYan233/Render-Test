@@ -1,10 +1,13 @@
-FROM cloudreve/cloudreve
+FROM cloudreve/cloudreve AS copyfile
 
 RUN apk add jq findutils curl wget
-RUN wget -N git.io/aria2.sh && chmod +x aria2.sh
+#RUN wget -N git.io/aria2.sh && chmod +x aria2.sh
 RUN rm -rf /var/cache/apk/* /tmp/*
 
-RUN ./aria2.sh
+FROM p3terx/aria2-pro
+
+COPY --from=copyfile /cloudreve/cloudreve /cloudreve/cloudreve
+#RUN curl -fsSL git.io/aria2c.sh
 
 ENV RCLONE_CONFIG=/config/rclone.conf \
     UPDATE_TRACKERS=true \
