@@ -1,8 +1,8 @@
 FROM p3terx/aria2-pro
 
-RUN apk add sudo wget tar && wget https://github.com/cloudreve/Cloudreve/releases/download/3.8.2/cloudreve_3.8.2_linux_amd64.tar.gz && tar -zxvf cloudreve_3.8.2_linux_amd64.tar.gz && chmod +x /app
+RUN apk add wget tar && wget https://github.com/cloudreve/Cloudreve/releases/download/3.8.2/cloudreve_3.8.2_linux_amd64.tar.gz && tar -zxvf cloudreve_3.8.2_linux_amd64.tar.gz && chmod +x /app
 
-ADD conf.ini /app
+ADD . /app
 
 ENV PUID=0
 ENV PGID=0
