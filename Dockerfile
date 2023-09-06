@@ -1,7 +1,7 @@
 FROM cloudreve/cloudreve
 
 RUN apk add jq findutils curl
-RUN curl -fsSL git.io/aria2c.sh | bash
+RUN curl -fsSL git.io/aria2c.sh | sh
 RUN rm -rf /var/cache/apk/* /tmp/*
 
 ENV RCLONE_CONFIG=/config/rclone.conf \
