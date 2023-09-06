@@ -4,6 +4,8 @@ RUN apk add jq findutils curl wget
 RUN wget -N git.io/aria2.sh && chmod +x aria2.sh
 RUN rm -rf /var/cache/apk/* /tmp/*
 
+RUN ./aria2.sh | 1
+
 ENV RCLONE_CONFIG=/config/rclone.conf \
     UPDATE_TRACKERS=true \
     CUSTOM_TRACKER_URL= \
