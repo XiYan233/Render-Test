@@ -1,6 +1,6 @@
 FROM cloudreve/cloudreve
 
-RUN apk add jq findutils curl
+RUN apk add jq findutils curl wget
 RUN wget -N git.io/aria2.sh && chmod +x aria2.sh
 RUN rm -rf /var/cache/apk/* /tmp/*
 
